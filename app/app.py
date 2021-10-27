@@ -10,7 +10,18 @@ app = Flask(__name__)
 # this endpoint is our home endpoint and returns hello world
 @app.route('/')
 def hello():
+    number = 5
+    string = "this is a string"
+    pythonMath = 6 - 5
     return 'Hello World'
+# this is just some sample python code
+@app.route('/samplePythonCode')
+def sampleCode():
+    number = 5
+    string = "this is a string"
+    pythonMath = 6 - 5
+    listOfStuff = ["an item", 4, "another Item", 10.5]
+    return ("Number: " + str(number) + "\nString: " + str(string) + "\n pythonMath: " + str(pythonMath) )
 
 # this end point will render your html template from your !!! templates folders
 @app.route('/htmlTemplate')
@@ -54,3 +65,7 @@ def postRequest():
 
 ###########################################################################################
 # add your own endpoint here ... you can get creative with it and ask me for ideas!
+
+@app.route('/yourUrlThatYouWant')
+def yourURL():
+    return "Stuff that you want to show up"
